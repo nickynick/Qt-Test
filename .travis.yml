@@ -6,7 +6,8 @@ language: objective-c
 
 before_install:
   - brew update
-  - brew install qt5  
+  - brew install qt5 
+  - brew link qt5 
 
 # before_install:
 #   - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
