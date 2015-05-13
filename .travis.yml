@@ -1,11 +1,13 @@
 language: cpp
 compiler:
-  - gcc
+  #- gcc
   - clang
 
 install:
   - sudo apt-get update
-  - sudo apt-get install libqt5-dev qt5-qmake
+  - sudo apt-cache search qt
+  - sudo apt-cache search qbs
+  #- sudo apt-get install libqt5-dev qt5-qmake
 
 script:
   - qmake -project
