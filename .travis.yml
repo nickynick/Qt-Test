@@ -6,8 +6,10 @@ language: objective-c
 
 before_install:
   - brew update
-  - brew install qt5 
+  - brew install qt5   
   - brew link qt5 --force 
+  - brew install qbs
+  - brew link qbs --force
 
 # before_install:
 #   - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
@@ -15,8 +17,9 @@ before_install:
 #   - sudo apt-get install qtbase5-dev qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev
 #   - sudo apt-get install qt5-default qttools5-dev-tools
 
-script:
+script:  
   - qmake --version
+  - qbs --help
   - qmake -project
   - qmake Test.pro
   - make 
