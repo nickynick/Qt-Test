@@ -10,4 +10,4 @@ install:
 script:
   - qmake -project
   - qmake Test.pro
-  - make
+  - make 
