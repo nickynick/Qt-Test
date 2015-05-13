@@ -3,13 +3,14 @@ compiler:
   #- gcc
   - clang
 
-install:
-  - sudo apt-get update
-  - sudo apt-cache search qt
-  - sudo apt-cache search qbs
-  #- sudo apt-get install libqt5-dev qt5-qmake
+before_install:
+  - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
+  - sudo apt-get update -qq
+  - sudo apt-get install qtbase5-dev qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev
+  - sudo apt-get install qt5-default qttools5-dev-tools
 
 script:
+  - qmake --version
   - qmake -project
   - qmake Test.pro
   - make 
